@@ -10,21 +10,21 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-      this.fetchLanguages()
-      console.log('app.js: didmount')
+        this.fetchLanguages();
+        console.log("app.js: didmount");
     }
     async fetchLanguages() {
-      const langs = await getLanguages()
-      this.setState({langs} )
+        const langs = await getLanguages();
+        this.setState({ langs });
     }
 
     addLang(lang) {
-      this.setState({
-        tab: 'list',
-        langs: [...this.state.langs, lang]
-      });
+        this.setState({
+            tab: "list",
+            langs: [...this.state.langs, lang],
+        });
     }
-    
+
     render() {
         const { tab, langs } = this.state;
         return (
@@ -36,7 +36,7 @@ class App extends React.Component {
                     </ul>
                 </header>
                 <hr />
-                {tab === "list" ? <List langs={langs} /> : <Form onAddLang={(lang ) => this.addLang(lang)} />}
+                {tab === "list" ? <List langs={langs} /> : <Form onAddLang={(lang) => this.addLang(lang)} />}
             </div>
         );
     }
