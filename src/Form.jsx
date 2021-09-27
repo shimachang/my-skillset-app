@@ -3,6 +3,7 @@ import { Button } from "./components/botton";
 import styled from "styled-components";
 import { TabBodyContainer } from "./components/tab-body-container";
 import { FormModal } from "./FormModal";
+import { Hint } from "./Hint";
 
 const Label = styled.label`
     display: flex;
@@ -39,6 +40,7 @@ export const Form = ({ onAddLang }) => {
             <form onSubmit={submitForm}>
                 <div>
                     <Input type={"text"} value={text} onChange={(e) => setText(e.target.value)}></Input>
+                    <Hint />
                 </div>
                 <ButtonContainer>
                     <FormButton>追加</FormButton>
